@@ -1,4 +1,4 @@
-import React from "react";
+import ExpenseItem from "./components/ExpenseItem/ExpenseItem";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <ExpenseItem />
     </div>
   );
 }
