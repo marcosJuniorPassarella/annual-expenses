@@ -1,3 +1,5 @@
+import "./ExpenseDate.css";
+
 interface ExpenseDateProps {
   date: Date;
 }
@@ -8,10 +10,10 @@ export default function ExpenseDate({ date }: ExpenseDateProps) {
   const year = date.getFullYear();
 
   return (
-    <div className="">
-      <div className="">{month}</div>
-      <div className="">{year}</div>
-      <div className="">{day}</div>
+    <div className="expense-date">
+      <div className="expense-date__month">{month}</div>
+      <div className="expense-date__year">{year}</div>
+      <div className="expense-date__day">{day}</div>
     </div>
   );
 }
