@@ -1,5 +1,6 @@
+import Card from "../Card/Card";
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
-import './Expenses.css';
+import "./Expenses.css";
 
 interface ExpensesProps {
   expenses: {
@@ -12,7 +13,7 @@ interface ExpensesProps {
 
 export default function Expenses({ expenses }: ExpensesProps) {
   return (
-    <div className="expenses">
+    <Card className="expenses">
       <ExpenseItem
         title={expenses[0].title}
         date={expenses[0].date}
@@ -33,6 +34,6 @@ export default function Expenses({ expenses }: ExpensesProps) {
         date={expenses[3].date}
         amount={expenses[3].amount}
       />
-    </div>
+    </Card>
   );
 }
