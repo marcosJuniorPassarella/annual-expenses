@@ -13,14 +13,15 @@ export default function ExpenseForm() {
 
   const titleChangeHandler = (event: any) => {
     // setEnteredTitle(event.target.value);
-    setUserInput({
-      ...userInput,
-      enteredTitle: event.target.value,
+    setUserInput((prevState) => {
+      return { ...prevState, enteredTitle: event.target.value };
     });
   };
 
   const amountChangeHandler = (event: any) => {
     // setEnteredAmount(event.target.value);
+
+    // Atualizando o estato e recuperando o estado anterior corretamente
     setUserInput({
       ...userInput,
       enteredAmount: event.target.value,
