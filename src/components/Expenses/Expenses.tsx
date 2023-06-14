@@ -3,8 +3,9 @@ import Card from "../UI/Card/Card";
 import ExpenseItem from "../Expenses/ExpenseItem/ExpenseItem";
 import "./Expenses.css";
 import ExpensesFilter from "./ExpensesFilter/ExpensesFilter";
+import ExpensesList from "./ExpensesList/ExpensesList";
 
-interface ExpensesProps {
+export interface ExpensesProps {
   expenses: {
     id: string;
     title: string;
@@ -18,18 +19,6 @@ export default function Expenses({ expenses }: ExpensesProps) {
   const filteredExpenses = expenses.filter((expense) => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
-  let expensesContent = <p>No expenses found.</p>;
-
-  if (filteredExpenses.length > 0) {
-    expensesContent = filteredExpenses.map((expense) => (
-      <ExpenseItem
-        key={expense.id}
-        title={expense.title}
-        date={expense.date}
-        amount={expense.amount}
-      />
-    )) as any;
-  }
 
   const filterChangeHandler = (selectedYear: string) => {
     console.log("Expenses", selectedYear);
@@ -43,7 +32,7 @@ export default function Expenses({ expenses }: ExpensesProps) {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
-        {expensesContent}
+        <ExpensesList expenses={filteredExpenses} />
       </Card>
     </div>
   );
