@@ -7,6 +7,7 @@ export default function ExpenseForm(props: {
     amount: string;
     date: Date;
   }) => void;
+  onCancel: () => void;
 }) {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
@@ -71,6 +72,9 @@ export default function ExpenseForm(props: {
       </div>
       <div className="new-expense__actions">
         <button type="submit">Add Expense</button>
+        <button type="button" onClick={props.onCancel}>
+          Cancel
+        </button>
       </div>
     </form>
   );
