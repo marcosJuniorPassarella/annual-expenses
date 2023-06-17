@@ -4,7 +4,7 @@ import "./ExpenseForm.css";
 export default function ExpenseForm(props: {
   onSaveExpenseData: (expense: {
     title: string;
-    amount: string;
+    amount: number;
     date: Date;
   }) => void;
   onCancel: () => void;
@@ -28,7 +28,7 @@ export default function ExpenseForm(props: {
     event.preventDefault();
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 

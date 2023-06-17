@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Card from "../UI/Card/Card";
-import ExpenseItem from "../Expenses/ExpenseItem/ExpenseItem";
 import "./Expenses.css";
 import ExpensesFilter from "./ExpensesFilter/ExpensesFilter";
 import ExpensesList from "./ExpensesList/ExpensesList";
+import ExpensesChart from "../Chart/ExpensesChart";
 
 export interface ExpensesProps {
   expenses: {
@@ -32,6 +32,7 @@ export default function Expenses({ expenses }: ExpensesProps) {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
+        <ExpensesChart expenses={filteredExpenses} />
         <ExpensesList expenses={filteredExpenses} />
       </Card>
     </div>
